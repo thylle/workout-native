@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["src/*"]
+    },
+    "noEmit": true,
+    "lib": ["dom", "esnext"],
+    "jsx": "react-native",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "typeRoots": ["node_modules/@types", "src/typings"]
+  }
+}
