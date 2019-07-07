@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Provider } from 'react-redux'
 import styled from 'styled-components/native'
 import theme from '~/styles/theme'
 import Login from '~/components/Login'

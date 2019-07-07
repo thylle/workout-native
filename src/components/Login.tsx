@@ -6,6 +6,7 @@ import { userActions } from '~/store/user-actions'
 import theme from '~/styles/theme'
 import Container from '~/generics/Container'
 import { UserType } from '~/store/user-reducer'
+import Input from '~/generics/Input'
 
 type StateProps = {
   user: UserType
@@ -35,6 +36,15 @@ class Login extends Component<LoginProps> {
     this.setState({
       userRef,
     })
+
+    //Temp auto login
+    setTimeout(() => {
+      this.setState({
+        inputValue: 'thylle',
+      })
+      this.checkUser()
+    }, 300)
+    //Temp auto login
   }
 
   public checkUser() {
@@ -47,11 +57,13 @@ class Login extends Component<LoginProps> {
       userRef
         .orderByChild('email')
         .equalTo(inputEmail)
-        .once('value', snapshot => {
-          //If user already exists - login
+        .on('value', snapshot => {
+          //If user already exists - login'
           const res = snapshot.val()
+
           if (res) {
             const user = Object.values(res) as UserType[]
+
             this.props.setUser(user[0])
           } else {
             this.createUser(inputEmail)
@@ -96,7 +108,6 @@ class Login extends Component<LoginProps> {
             <Input
               value={this.state.inputValue}
               placeholder="Type your email to login..."
-              placeholderTextColor={theme.textColor}
               onChangeText={input => this.handleChange(input)}
               onSubmitEditing={() => this.handleSubmit()}
             />
@@ -127,11 +138,4 @@ export default connect(
 const LoginContainer = styled.KeyboardAvoidingView`
   flex: 1;
   justify-content: center;
-`
-
-const Input = styled.TextInput`
-  width: 100%;
-  padding: ${theme.spacing4};
-  text-align: center;
-  border: 1px solid ${theme.grayLight};
 `

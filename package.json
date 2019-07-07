@@ -11,6 +11,7 @@
     "@babel/core": "^7.4.5",
     "@types/styled-components": "^4.1.16",
     "expo": "^33.0.0",
+    "galio-framework": "^0.5.3",
     "react": "16.8.3",
     "react-dom": "^16.8.6",
     "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
@@ -28,7 +29,9 @@
     "metro-react-native-babel-preset": "^0.54.1",
     "react-native-firebase": "^5.5.2",
     "react-redux": "^7.1.0",
+    "react-redux-firebase": "^2.2.6",
     "redux": "^4.0.1",
+    "redux-firestore": "^0.8.0",
     "styled-components": "^4.3.1",
     "typesafe-actions": "^4.4.1",
     "typescript": "^3.4.5"

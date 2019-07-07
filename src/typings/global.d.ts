@@ -1,6 +1,6 @@
 import { Action } from 'redux'
 import { Store as ReduxStore } from 'redux'
-import { RootState as StoreState } from '~/store'
+import { RootState as StoreState } from '~/store/store'
 
 declare global {
   type RootState = StoreState
